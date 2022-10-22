@@ -10,7 +10,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 -- Variable Init
 local userName = game:GetService("Players").LocalPlayer.Name
 local character = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
-local strength = game:GetService("Players").CrockSitter.PlayerGui.Bin.UIs.CurrencyUi.Strength.Num.ContentText
+local strength = game:GetService("Players").LocalPlayer.PlayerGui.Bin.UIs.CurrencyUi.Strength.Num.ContentText
 local originalPosition = character.CFrame
 
 -- UI Window
