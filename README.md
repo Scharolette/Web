@@ -1,3 +1,3 @@
 # Scharolette's Web
 
-WEB: *INSERT HUBLIKE LOADSTRING*
+WEB: *COMING SOON*
