@@ -25,6 +25,6 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
-if games[game.GameId] then
-    games[game.GameId]()
+if supportedGames[game.GameId] then
+    supportedGames[game.GameId]()
 end
