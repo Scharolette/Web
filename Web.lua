@@ -1,4 +1,4 @@
--- All scripts are created by me
+-- All scripts are created by me and if given substantial help, users will be credited within the source.
 
 local supportedGames = {
     [4188447592] = function() -- Cat Simulator
