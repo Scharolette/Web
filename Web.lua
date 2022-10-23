@@ -1,3 +1,5 @@
+-- All scripts are created by me
+
 local supportedGames = {
     [4188447592] = function() -- Cat Simulator
         loadstring("https://raw.githubusercontent.com/Scharolette/Web/main/Source/CatSimulator4188447592.lua")
