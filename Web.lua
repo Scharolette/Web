@@ -12,15 +12,15 @@ local supportedGames = {
     [10675042838] = function() -- Lemonade Tycoon
         print("3")
         loadstring("https://raw.githubusercontent.com/Scharolette/Web/main/Source/LemonadeTycoon10675042838.lua")
-    end
+    end,
     [9285238704] = function() -- Race Clicker
         print("4")
         loadstring("https://raw.githubusercontent.com/Scharolette/Web/main/Source/RaceClicker9285238704.lua")
-    end
+    end,
     [4183364845] = function() -- Speed Run 4
         print("5")
         loadstring("https://raw.githubusercontent.com/Scharolette/Web/main/Source/SpeedRun4183364845.lua")
-    end
+    end,
     [9498006165] = function() -- Tapping Simulator
         print("6")
         loadstring("https://raw.githubusercontent.com/Scharolette/Web/main/Source/TappingSimulator9498006165.lua")
