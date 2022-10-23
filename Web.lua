@@ -19,6 +19,9 @@ local supportedGames = {
     [9498006165] = function() -- Tapping Simulator
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Scharolette/Web/main/Source/TappingSimulator9498006165.lua"))()
     end
+    [10681346822] = function() -- Jump Game
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Scharolette/Web/main/Source/JumpGame10681346822.lua"))()
+    end
 }
 
 if not game:IsLoaded() then
