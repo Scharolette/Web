@@ -1,3 +1,3 @@
 # Scharolette's Web
 
-WEB: *COMING SOON*
+WEB: loadstring("https://raw.githubusercontent.com/Scharolette/Web/main/Web.lua")
