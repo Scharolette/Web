@@ -16,6 +16,7 @@ if getgenv().loaded then
 else
     getgenv().loaded = true
 end
+
 --Anti-AFK
 local Players = game:GetService("Players")
 local connections = getconnections or get_signal_cons
@@ -79,9 +80,9 @@ task.spawn(claimGifts)
 
 getgenv().settings = {}
 --Load Settings
-if isfile("plsdonatesettings.txt") then
+if isfile("plsdonatesettingsmodified.txt") then
     local sl, er = pcall(function()
-        getgenv().settings = httpservice:JSONDecode(readfile('plsdonatesettings.txt'))
+        getgenv().settings = httpservice:JSONDecode(readfile('plsdonatesettingsmodified.txt'))
     end)
     if er ~= nil then
         task.spawn(function()
@@ -91,7 +92,7 @@ if isfile("plsdonatesettings.txt") then
             task.wait(15)
             errMsg:Destroy()
         end)
-    delfile("plsdonatesettings.txt")
+    delfile("plsdonatesettingsmodified.txt")
     end
 
 end
@@ -103,7 +104,7 @@ if #getgenv().settings ~= sNames then
             getgenv().settings[v] = sValues[i]
         end
     end
-    writefile('plsdonatesettings.txt', httpservice:JSONEncode(getgenv().settings))
+    writefile('plsdonatesettingsmodified.txt', httpservice:JSONEncode(getgenv().settings))
 end
 
 --Save Settings
@@ -111,7 +112,7 @@ local settingsLock = true
 local function saveSettings()
     if settingsLock == false then
         print('Settings saved.')
-        writefile('plsdonatesettings.txt', httpservice:JSONEncode(getgenv().settings))
+        writefile('plsdonatesettingsmodified.txt', httpservice:JSONEncode(getgenv().settings))
     end
 end
 local function serverHop()
