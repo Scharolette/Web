@@ -9,7 +9,9 @@ for i,v in pairs(game:GetService("Workspace").Tycoon.Plot:GetChildren()) do
     print(v)
     print(v.Owner.Value == game:GetService("Players").LocalPlayer)
     if v.Owner.Value == game:GetService("Players").LocalPlayer then
-        local userTycoon = v
+        print(v.Owner.Value)
+        userTycoon = v
+        print(userTycoon)
     end
 end
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -58,9 +60,10 @@ end
 
 function AutoUpgradeRate()
     while getgenv().autoUpgradeRate do
-        firetouchinterest(game:GetService("Workspace").Tycoon.Plot.F["Buttons_E"].Upgrade.Head, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 0)
+        print(userTycoon)
+        firetouchinterest(userTycoon["Buttons_E"].Upgrade.Head, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 0)
         task.wait()
-        firetouchinterest(game:GetService("Workspace").Tycoon.Plot.F["Buttons_E"].Upgrade.Head, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 1)
+        firetouchinterest(userTycoon["Buttons_E"].Upgrade.Head, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 1)
         task.wait()
     end
 end
