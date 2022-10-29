@@ -35,6 +35,17 @@ Tab:AddToggle({ -- Inf Parts toggle
 	end
 end})
 
+Tab:AddToggle({ -- Auto Desposit toggle
+	Name = "Auto Deposit",
+	Callback = function(bool)
+	Default = false
+	getgenv().autoDeposit = bool
+	
+	if bool == true then
+	    AutoDeposit()
+	end
+end})
+
 Tab:AddToggle({ -- Auto Upgrade Rate toggle
 	Name = "Auto Upgrade Rate",
 	Callback = function(bool)
@@ -60,10 +71,18 @@ end
 
 function AutoUpgradeRate()
     while getgenv().autoUpgradeRate do
-        print(userTycoon)
         firetouchinterest(userTycoon["Buttons_E"].Upgrade.Head, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 0)
         task.wait()
         firetouchinterest(userTycoon["Buttons_E"].Upgrade.Head, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 1)
+        task.wait()
+    end
+end
+
+function AutoDeposit()
+    while getgenv().autoDeposit do
+        firetouchinterest(userTycoon["Buttons_E"].Put.Head, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 0)
+        task.wait()
+        firetouchinterest(userTycoon["Buttons_E"].Put.Head, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 1)
         task.wait()
     end
 end
