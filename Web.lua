@@ -21,6 +21,9 @@ local supportedGames = {
     end,
     [10681346822] = function() -- Jump Game
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Scharolette/Web/main/Source/JumpGame10681346822.lua"))()
+    end,
+    [9992339729] = function() -- Longest Answer Wins
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Scharolette/Web/main/Source/LongestAnswerWins9992339729.lua"))()
     end
 }
 
