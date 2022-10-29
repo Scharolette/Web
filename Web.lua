@@ -24,6 +24,9 @@ local supportedGames = {
     end,
     [9992339729] = function() -- Longest Answer Wins
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Scharolette/Web/main/Source/LongestAnswerWins9992339729.lua"))()
+    end,
+    [10977918334] = function() -- Merge Droppers
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Scharolette/Web/main/Source/MergeDroppers10977918334.lua"))()
     end
 }
 
