@@ -1,5 +1,4 @@
 --This is NOT my script, i'm just learning from it and using it you can find the original script here: https://raw.githubusercontent.com/tzechco/roblox-scripts/main/PLS%20DONATE/autofarm.lua
---This also won't be loaded if using the web link
 
 --Wait until game loads
 repeat
