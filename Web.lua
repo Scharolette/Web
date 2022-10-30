@@ -27,6 +27,9 @@ local supportedGames = {
     end,
     [10977918334] = function() -- Merge Droppers
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Scharolette/Web/main/Source/MergeDroppers10977918334.lua"))()
+    end,
+    [7026828578] = function() -- Speed Simulator
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Scharolette/Web/main/Source/SpeedSimulator7026828578.lua"))()
     end
 }
 
