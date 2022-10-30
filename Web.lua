@@ -30,6 +30,9 @@ local supportedGames = {
     end,
     [7026828578] = function() -- Speed Simulator
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Scharolette/Web/main/Source/SpeedSimulator7026828578.lua"))()
+    end,
+    [8737602449] = function() -- Pls Donate
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Scharolette/Web/main/Source/PlsDonate8737602449.lua"))()
     end
 }
 
