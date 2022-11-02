@@ -7,6 +7,9 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 -- Legitimatize, or whatever. Add checks for when auto gem farming if a user is at the flag, don't teleport. Stuff like that
 -- Add auto pets
 
+-- Hotfix:
+-- Boss was bugging out
+
 -- Changelog:
 -- Cleaned up the UI because if you don't know what these mean you won't care about the script anyway
 -- Added Auto boss fight
@@ -20,6 +23,7 @@ local character = user.Character.HumanoidRootPart
 local strength = user.PlayerGui.Bin.UIs.CurrencyUi.Strength.Num.ContentText
 local originalPosition = character.CFrame
 local capturingFlag = false
+local FightingBoss = false
 
 -- UI Window -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 local Window = OrionLib:MakeWindow({Name = "Cat Simulator | Scharolette#6473", HidePremium = true, SaveConfig = false, IntroEnabled = false, ConfigFolder = "Scharolette"})
@@ -671,33 +675,41 @@ function BossFight()
     while getgenv().bossFight do
         task.wait()
         if user.Character:FindFirstChild("HumanoidRootPart") then
-            for i,v in pairs(user.Character:GetChildren()) do
-                if v.ClassName == "Tool" then
-                    if string.match(v.Name, "Boss") == "Boss" then
-                        currentClaw = "Boss"
+            if capturing == false then
+                FightingBoss = true
+                for i,v in pairs(user.Character:GetChildren()) do
+                    if v.ClassName == "Tool" then
+                        if string.match(v.Name, "Boss") == "Boss" then
+                            currentClaw = "Boss"
+                        else
+                            currentClaw = "Regular"
+                        end
+                    end
+                end
+                
+                bossAlive = string.match(game:GetService("Workspace").BossTimer.BillboardGui.TextLabel.ContentText, "Time left:")
+                if bossAlive ~= nil then
+                    if currentClaw == "Regular" then
+                        firetouchinterest(user.Character.HumanoidRootPart, game:GetService("Workspace").BossTeleporter.TeleporterA.Base, 0)
+                        task.wait(.1)
+                        user.Character.HumanoidRootPart.CFrame = CFrame.new(0.135487, -175.802, 30.391)
                     else
-                        currentClaw = "Regular"
+                        for i,v in pairs(game:GetService("Workspace").Boss:GetChildren()) do
+                            boss = v.HumanoidRootPart
+                        end
+                        user.Character.Humanoid:MoveTo(boss.Position)
                     end
-                end
-            end
-            
-            bossAlive = string.match(game:GetService("Workspace").BossTimer.BillboardGui.TextLabel.ContentText, "Time left:")
-            if bossAlive ~= nil then
-                if currentClaw == "Regular" then
-                    firetouchinterest(user.Character.HumanoidRootPart, game:GetService("Workspace").BossTeleporter.TeleporterA.Base, 0)
-                    task.wait(.1)
-                    user.Character.HumanoidRootPart.CFrame = CFrame.new(0.135487, -175.802, 30.391)
                 else
-                    for i,v in pairs(game:GetService("Workspace").Boss:GetChildren()) do
-                        boss = v.HumanoidRootPart
+                    if currentClaw == "Boss" then
+                        firetouchinterest(user.Character.HumanoidRootPart, game:GetService("Workspace").BossTeleporter.TeleporterB.Base, 0)
                     end
-                    user.Character.Humanoid:MoveTo(boss.Position)
-                end
-            else
-                if currentClaw == "Boss" then
-                    firetouchinterest(user.Character.HumanoidRootPart, game:GetService("Workspace").BossTeleporter.TeleporterB.Base, 0)
                 end
             end
+        else
+            task.wait(10)
+        end
+        if getgenv().bossFight == false then
+            FightingBoss = false
         end
     end
 end
